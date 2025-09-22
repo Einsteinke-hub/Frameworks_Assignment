@@ -1,61 +1,77 @@
-CORD-19 Data Explorer
-This project is a simple data analysis and visualization application built with Python and Streamlit. The goal is to explore a subset of the COVID-19 Open Research Dataset (CORD-19), specifically the metadata.csv file, to uncover basic insights about scientific publications related to the pandemic.
+# CORD-19 Data Explorer
 
-This project was created as an assignment to demonstrate fundamental data analysis skills, including data loading, cleaning, manipulation, and visualization, all presented through an interactive web application.
+This project is a simple data analysis and visualization application built with Python and Streamlit. Its goal is to explore a subset of the COVID-19 Open Research Dataset (CORD-19)—specifically the `metadata.csv` file—to uncover basic insights about scientific publications related to the pandemic.
 
-Table of Contents
-Project Overview
+Created as an assignment, this project demonstrates core data analysis skills: data loading, cleaning, manipulation, and visualization, all presented through an interactive web application.
 
-Project Structure
+---
 
-How to Run the Application
+## Table of Contents
 
-Key Findings
+- [Project Overview](#project-overview)
+- [Project Structure](#project-structure)
+- [How to Run the Application](#how-to-run-the-application)
+- [Key Findings](#key-findings)
+- [Reflection](#reflection)
 
-Reflection
+---
 
-Project Overview
-The application processes the CORD-19 metadata.csv file to provide a quick look at the research landscape. Users can interact with a slider to filter the data by publication year and see real-time updates to the visualizations.
+## Project Overview
 
-The application includes:
+The application processes the CORD-19 `metadata.csv` file and provides an interactive exploration of the research landscape. Users can filter data by publication year using a slider and see real-time updates in the visualizations.
 
-Data Cleaning and Preparation: Handling missing values and converting data types.
+**The application includes:**
+- **Data Cleaning and Preparation:** Handles missing values and converts data types as needed.
+- **Data Analysis:** Counts papers by year, identifies top journals, and analyzes paper titles.
+- **Visualizations:** Interactive charts display publication trends, a list of top journals, and a word cloud of common words in paper titles.
 
-Data Analysis: Counting papers by year, identifying top journals, and analyzing paper titles.
+---
 
-Visualizations: Interactive charts showing publication trends, a list of top journals, and a word cloud of common title words.
+## Project Structure
 
-Project Structure
-app.py: The main Python script that contains all the code for the Streamlit application, including data loading, cleaning, analysis, and visualization.
+- **`app.py`**: Main Python script containing all code for the Streamlit application, including data loading, cleaning, analysis, and visualization.
+- **`metadata.csv`**: Primary dataset used for analysis. _Note: This is a large file and is tracked using Git Large File Storage (LFS)._
 
-metadata.csv: The primary dataset file used for the analysis. Note: This is a large file and is tracked using Git Large File Storage (LFS).
+---
 
-How to Run the Application
-1. Prerequisites
-Ensure you have Python 3.7+ installed. You also need the required libraries.
+## How to Run the Application
 
+### 1. Prerequisites
+
+Make sure you have Python 3.7+ installed. Install the required libraries:
+
+```bash
 pip install pandas matplotlib seaborn streamlit wordcloud
+```
 
-2. Download the Dataset
-The metadata.csv file is required to run the application. You can download it directly from the Kaggle CORD-19 dataset page. Place this file in the same directory as the app.py script.
+### 2. Download the Dataset
 
-3. Run the App
-Navigate to the project directory in your terminal and run the following command:
+Download `metadata.csv` from the [Kaggle CORD-19 dataset page](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge). Place this file in the same directory as `app.py`.
 
+### 3. Run the App
+
+Navigate to the project directory in your terminal and run:
+
+```bash
 streamlit run app.py
+```
 
 This will start a local web server and open the application in your browser.
 
-Key Findings
-Based on the analysis, here are some of the key insights from the dataset:
+---
 
-Publication Trends: There was a significant spike in COVID-19-related publications in the year 2020, reflecting the global focus on the pandemic.
+## Key Findings
 
-Top Journals: Journals like medRxiv and bioRxiv were among the most active publishers, likely due to their role as pre-print servers, which allows for rapid sharing of research.
+Based on the analysis, here are some key insights from the dataset:
 
-Common Terminology: The word cloud reveals that terms such as "COVID-19," "SARS-CoV-2," "pandemic," and "risk" are most prevalent in paper titles, which aligns with the core topics of the research.
+- **Publication Trends:** There was a dramatic spike in COVID-19-related publications in 2020, reflecting the global focus on the pandemic.
+- **Top Journals:** Journals like _medRxiv_ and _bioRxiv_ were among the most active publishers, likely due to their pre-print nature, allowing rapid sharing of research.
+- **Common Terminology:** The word cloud reveals that terms such as "COVID-19," "SARS-CoV-2," "pandemic," and "risk" are most prevalent in paper titles, aligning with core research topics.
 
-Reflection
-The biggest challenge in this project was handling the large metadata.csv file. Loading and processing it efficiently required a careful approach, and using Git LFS was essential for managing the project on GitHub.
+---
 
-Working with Streamlit was a great introduction to building interactive data applications. It was surprising how quickly a functional and visually appealing dashboard could be created with a few lines of code. The combination of pandas for data manipulation and Streamlit for presentation provides a powerful and accessible toolkit for anyone starting in data science.
+## Reflection
+
+The biggest challenge was efficiently handling the large `metadata.csv` file. Loading and processing it required careful attention, and using Git LFS was essential for managing the file on GitHub.
+
+Working with Streamlit offered a great introduction to building interactive data applications. It was surprising how quickly a functional, visually appealing dashboard could be created. The combination of pandas for data manipulation and Streamlit for presentation provides a powerful, accessible toolkit for anyone starting in data science.
